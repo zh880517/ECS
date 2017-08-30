@@ -1,14 +1,7 @@
 ﻿using System;
 namespace Logic.Base
 {
-
-    public enum DirectionType
-    {
-        Down,
-        Up,
-        Left,
-        Right,
-    }
+    
     public struct Vector
     {
         public const float kEpsilon = 1E-05F;
@@ -18,7 +11,11 @@ namespace Logic.Base
         public static readonly Vector Up = new Vector(0, 1);
         public static readonly Vector Left = new Vector(-1, 0);
         public static readonly Vector Right = new Vector(1, 0);
-        public static readonly Vector[] Direction = new Vector[] { Down, Up, Left, Right};
+        public static readonly Vector LowerLeft = new Vector(-1, -1);
+        public static readonly Vector LowerRight = new Vector(1, -1);
+        public static readonly Vector UpperLeft = new Vector(-1, 1);
+        public static readonly Vector UpperRight = new Vector(1, 1);
+        public static readonly Vector[] Direction = new Vector[] { Down, Up, Left, Right, LowerLeft, LowerRight, UpperLeft, UpperRight };
 
         public float X;
         public float Y;

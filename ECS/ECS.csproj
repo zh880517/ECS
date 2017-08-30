@@ -49,7 +49,10 @@
     <Compile Include="ECS\Pool.cs" />
     <Compile Include="Logic\Base\AABB.cs" />
     <Compile Include="Logic\Base\BorderLine.cs" />
+    <Compile Include="Logic\Base\DirectionType.cs" />
     <Compile Include="Logic\Base\Movement.cs" />
+    <Compile Include="Logic\Base\SceneCell.cs" />
+    <Compile Include="Logic\Base\SceneRoot.cs" />
     <Compile Include="Logic\Base\Trigger.cs" />
     <Compile Include="Logic\Base\Vector.cs" />
     <Compile Include="Logic\Component\CollideComponent.cs" />
