@@ -20,7 +20,7 @@ namespace Logic.Base
         private SceneCell[] adjacents = new SceneCell[8];
         private int x;
         private int y;
-        public bool walkable { get; set; }
+        public bool Walkable { get; set; }
         public CellType Type { get { return type; } }
         public AABB BoundBox { get { return boundBox; } }
         public int X { get { return x; } }
