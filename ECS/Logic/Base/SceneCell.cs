@@ -18,9 +18,11 @@ namespace Logic.Base
         private CellType type;
         private AABB boundBox;
         private SceneCell[] adjacents = new SceneCell[8];
+        //格子索引，从左到右
         private int x;
+        //从下到上
         private int y;
-        public bool Walkable { get; set; }
+        public bool Wallkable { get; set; }
         public CellType Type { get { return type; } }
         public AABB BoundBox { get { return boundBox; } }
         public int X { get { return x; } }
