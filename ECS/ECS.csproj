@@ -58,6 +58,7 @@
     <Compile Include="Logic\Component\CollideComponent.cs" />
     <Compile Include="Logic\Component\MovementComonent.cs" />
     <Compile Include="Logic\Component\QTreeComponent.cs" />
+    <Compile Include="Logic\Component\TouchingCellComponent.cs" />
     <Compile Include="Logic\Component\TransformComponent.cs" />
     <Compile Include="ECS\Entity.cs" />
     <Compile Include="ECS\EntityManager.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Logic\Component\TriggerComponent.cs" />
     <Compile Include="Logic\System\CollideSystem.cs" />
     <Compile Include="Logic\System\MovementSystem.cs" />
+    <Compile Include="Logic\System\TouchingCellSystem.cs" />
     <Compile Include="Logic\Utils\UtilsCollide.cs" />
     <Compile Include="Logic\Utils\UtilsMove.cs" />
     <Compile Include="Program.cs" />

@@ -31,8 +31,7 @@ namespace ECS
 
         public void SetActive<T>(bool bActive) where T:ISystem
         {
-            int index = 0;
-            if (sysTypes.TryGetValue(typeof(T), out index))
+            if (sysTypes.TryGetValue(typeof(T), out int index))
             {
                 systems[index].IsActive = bActive;
             }
