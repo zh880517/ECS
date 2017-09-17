@@ -12,6 +12,7 @@ namespace Logic.Base
         private int roomYNum;
 
         private Dictionary<int, SceneCell> cells = new Dictionary<int, SceneCell>();
+        private Dictionary<int, SceneCell> rooms = new Dictionary<int, SceneCell>();
 
         public SceneRoot(int roomXNum, int roomYNum, float roomWidth, float roomHigh, float pillarWidth, float pillarHigh)
         {
@@ -39,6 +40,7 @@ namespace Logic.Base
                     Vector vPos = new Vector(i * (roomWidth + pillarWidth), j * (roomHigh + pillarHigh));
                     SceneCell cell = new SceneCell(this, CellType.Room, new AABB(vPos, roomWidth, roomHigh), x, y);
                     cells.Add(key, cell);
+                    rooms.Add(key, cell);
                 }
             }
             for (int i = 0; i < roomXNum-1; ++i)
@@ -73,7 +75,7 @@ namespace Logic.Base
                     int y = j * 2 + 1;
                     int key = MakeKey(x, y);
                     Vector vPos = new Vector(i * (roomWidth + pillarWidth) + roomWidth, j * (roomHigh + pillarHigh) + roomHigh);
-                    SceneCell cell = new SceneCell(this, CellType.Room, new AABB(vPos, pillarWidth, pillarHigh), x, y);
+                    SceneCell cell = new SceneCell(this, CellType.Gate, new AABB(vPos, pillarWidth, pillarHigh), x, y);
                     cells.Add(key, cell);
                 }
             }
@@ -91,9 +93,25 @@ namespace Logic.Base
             return cell;
         }
 
-        public void GetTouchingCell(AABB aABB, List<SceneCell> list)
+        public void GetTouchingCell(AABB aabb, List<SceneCell> list)
         {
+            //先随便做一个暴力遍历判断的，后续再更改成效率更高的
+            foreach (var kv in cells)
+            {
+                if (kv.Value.BoundBox.Overlap(aabb))
+                    list.Add(kv.Value);
+            }
+        }
 
+        public void GetTouchingRoom(AABB aabb, List<SceneCell> list)
+        {
+            foreach (var kv in rooms)
+            {
+                if (kv.Value.BoundBox.Overlap(aabb))
+                {
+                    list.Add(kv.Value);
+                }
+            }
         }
 
         private int MakeKey(int x, int y)

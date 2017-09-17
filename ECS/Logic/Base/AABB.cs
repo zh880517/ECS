@@ -39,6 +39,10 @@
             return new AABB(a.Min + v, a.Max + v);
         }
 
+        public Vector Center()
+        {
+            return (Min + Max) * 0.5f;
+        }
         
     }
 }
