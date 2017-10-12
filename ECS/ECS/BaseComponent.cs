@@ -1,6 +1,6 @@
 ﻿namespace ECS
 {
-    public interface SingleComponent
+    public interface ISingleComponent
     {
     }
 

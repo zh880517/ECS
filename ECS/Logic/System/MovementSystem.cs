@@ -13,7 +13,7 @@ namespace Logic
 
         public override void Update(EntityManager entityMgr, TimeDelta timeDelta)
         {
-            entityMgr.ForEach((Entity Entity, TransformComponent trans, MovementComonent move) =>
+            entityMgr.ForEach((Entity entity, TransformComponent trans, MovementComonent move) =>
             {
                 if (move.Move.Type == MoveType.Straighton)
                 {

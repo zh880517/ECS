@@ -8,7 +8,7 @@ namespace ECS
     {
         private List<HashSet<Type>> entityComponentMask = new List<HashSet<Type>>();
         private Dictionary<Type, IPool> componentPool = new Dictionary<Type, IPool>();
-        private Dictionary<Type, SingleComponent> singleComponent = new Dictionary<Type, SingleComponent>();
+        private Dictionary<Type, ISingleComponent> singleComponent = new Dictionary<Type, ISingleComponent>();
         private Queue<int> idleId = new Queue<int>();
 
 
@@ -381,7 +381,7 @@ namespace ECS
         #endregion
 
         #region SingleComponent
-        public bool AddComponent<T>(T val) where T : SingleComponent
+        public bool AddComponent<T>(T val) where T : ISingleComponent
         {
             Type t = typeof(T);
             if (singleComponent.ContainsKey(t))
@@ -392,14 +392,14 @@ namespace ECS
             return true;
         }
 
-        public T GetComponent<T>() where T : class, SingleComponent
+        public T GetComponent<T>() where T : class, ISingleComponent
         {
-            SingleComponent compt = null;
+            ISingleComponent compt = null;
             singleComponent.TryGetValue(typeof(T), out compt);
             return compt as T;
         }
 
-        public void RemoveComponent<T>() where T : SingleComponent
+        public void RemoveComponent<T>() where T : ISingleComponent
         {
             singleComponent.Remove(typeof(T));
         }

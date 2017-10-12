@@ -7,7 +7,7 @@ namespace Logic
     {
         public override void FixedUpdate(EntityManager entityMgr, TimeDelta timeDelta)
         {
-            entityMgr.ForEach((Entity Entity, TransformComponent trans, CollideComponent collide) =>
+            entityMgr.ForEach((Entity entity, TransformComponent trans, CollideComponent collide) =>
             {
                 collide.HitEntity.Clear();
                 AABB curAABB = AABB.OffSet(collide.Box, trans.Position);
