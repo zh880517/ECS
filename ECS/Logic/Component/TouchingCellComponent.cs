@@ -8,6 +8,6 @@ namespace Logic
     public class TouchingCellComponent : BaseComponent
     {
         //碰触到的场景格子
-        public Queue<SceneCell> TouchingCells = new Queue<SceneCell>(3);
+        public List<SceneCell> TouchingCells = new List<SceneCell>(3);
     }
 }

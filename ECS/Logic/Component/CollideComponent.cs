@@ -17,6 +17,8 @@ namespace Logic
 
         public AABB Box { get { return box; } }
 
-        public HashSet<Entity> HitEntity = new HashSet<Entity>();
+        //public HashSet<Entity> HitEntity = new HashSet<Entity
+        public SceneCell CenterCell;//中心点所在格子
+        public List<SceneCell> TouchingCells = new List<SceneCell>(3);
     }
 }

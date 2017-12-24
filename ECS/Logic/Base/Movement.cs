@@ -43,7 +43,7 @@ namespace Logic.Base
         }
         //围绕的中心
         public Vector Center { get; set; }
-        //角度速度，正数为顺时针方向，负数为顺时针方向
+        //角度速度，正数为顺时针方向，负数为逆时针方向
         public float AngleSpeed { get; set; }
 
         public static RoundMove Make(Vector start, Vector center, float time, float speed, bool isClockWise)

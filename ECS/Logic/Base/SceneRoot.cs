@@ -19,6 +19,8 @@ namespace Logic.Base
             float maxX = roomXNum * roomWidth + (roomXNum - 1) * pillarWidth;
             float maxY = roomYNum * roomHigh + (roomYNum - 1) * pillarHigh;
             sceneArea = new AABB(Vector.Zero, maxX, maxY);
+            this.roomXNum = roomXNum;
+            this.roomYNum = roomYNum;
             this.roomHigh = roomHigh;
             this.roomWidth = roomWidth;
             this.pillarHigh = pillarHigh;
