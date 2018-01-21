@@ -59,5 +59,10 @@ namespace Logic.Base
                 adjacents[(int)type] = root.GetSceneCell(posX, posY);
             }
         }
+
+        public bool IsIn(Vector point)
+        {
+            return BoundBox.IsIn(point);
+        }
     }
 }

@@ -44,5 +44,9 @@
             return (Min + Max) * 0.5f;
         }
         
+        public bool IsIn(Vector point)
+        {
+            return Min.X <= point.X && Min.Y <= point.Y && Max.X >= point.X && Max.Y >= point.X;
+        }
     }
 }

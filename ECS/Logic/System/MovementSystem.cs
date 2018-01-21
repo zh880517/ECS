@@ -24,6 +24,8 @@ namespace Logic
 
                     trans.Position = movement.StartPos + UtilsMove.Move(movement.Direction, distance);
                     trans.Rotation = Vector.Direction[(int)movement.Direction];
+                    //此处根据原始位置和当前位置获取是否碰撞到不可通过的物体或者区域，如果有，则计算实际能够运动的距离
+                    //根据实际能够运动的距离计算出应该返回的时间点（如果不是直接返回则需要添加一个反弹组件，待反弹组件运行结束，再给对象添加一个反向的运动组件）
                 }
                 else if (move.Move.Type == MoveType.Round)
                 {

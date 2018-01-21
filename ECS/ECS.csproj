@@ -57,6 +57,7 @@
     <Compile Include="Logic\Component\CollideComponent.cs" />
     <Compile Include="Logic\Component\MovementComonent.cs" />
     <Compile Include="Logic\Component\ReboundComponent.cs" />
+    <Compile Include="Logic\Component\RigidBodyComponent.cs" />
     <Compile Include="Logic\Component\SceneRootComponent.cs" />
     <Compile Include="Logic\Component\TouchingCellComponent.cs" />
     <Compile Include="Logic\Component\TransformComponent.cs" />
